@@ -1,0 +1,13 @@
+{
+  "tasks": {
+    "start": "deno run --allow-net --allow-read=./static  --unstable-hmr=main.ts main.ts"
+  },
+  "imports": {
+    "@totto/hono-mastercss": "jsr:@totto/hono-mastercss@^0.1.0",
+    "hono": "jsr:@hono/hono@^4.4.12"
+  },
+  "compilerOptions": {
+    "jsx": "precompile",
+    "jsxImportSource": "hono/jsx"
+  }
+}
