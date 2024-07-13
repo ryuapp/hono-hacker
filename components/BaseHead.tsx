@@ -12,11 +12,6 @@ export function BaseHead(
   return (
     <>
       <title>{title}</title>
-      <link
-        rel="stylesheet"
-        type="text/css"
-        href="https://unpkg.com/tailwindcss@3.4.4/src/css/preflight.css"
-      />
       <meta name="description" content={description} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
