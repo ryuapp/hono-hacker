@@ -1,13 +1,15 @@
 {
   "tasks": {
-    "start": "deno run --allow-net --allow-read=./static  --unstable-hmr=main.ts main.ts"
+    "start": "deno run -A --unstable-hmr=main.ts main.ts & deno task tailwindcss",
+    "tailwindcss": "npx tailwindcss -i ./styles/main.css -o ./static/main.gen.css --minify --watch"
   },
   "imports": {
-    "@totto/hono-mastercss": "jsr:@totto/hono-mastercss@^0.1.0",
-    "hono": "jsr:@hono/hono@^4.4.12"
+    "hono": "jsr:@hono/hono@^4.4.12",
+    "tailwindcss": "npm:tailwindcss@^3.4.4"
   },
   "compilerOptions": {
     "jsx": "precompile",
     "jsxImportSource": "hono/jsx"
-  }
+  },
+  "exclude": ["./static/*"]
 }

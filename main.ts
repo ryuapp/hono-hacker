@@ -4,7 +4,6 @@ import { cors } from "hono/cors";
 import { secureHeaders } from "hono/secure-headers";
 import { jsxRenderer } from "hono/jsx-renderer";
 import { serveStatic } from "hono/deno";
-import { masterCssMiddleware as masterCSS } from "@totto/hono-mastercss";
 
 import { BaseLayout } from "./layouts/BaseLayout.tsx";
 import { NotFoundLayout } from "./layouts/NotFoundLayout.tsx";
@@ -15,11 +14,7 @@ import items from "./app/items/controller.ts";
 import users from "./app/users/controller.ts";
 
 const app = new Hono();
-app.use(logger());
-app.use(cors());
-app.use(secureHeaders());
-app.use(masterCSS());
-
+app.use(logger(), cors(), secureHeaders());
 app.use(
   jsxRenderer(({ children }) => {
     return BaseLayout(children);
