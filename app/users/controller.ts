@@ -1,7 +1,7 @@
 import { Hono } from "hono";
 import { getUser } from "../../utils/api.ts";
 
-import UserPage from "./Page.tsx";
+import UserPage from "./page.tsx";
 
 const app = new Hono();
 
