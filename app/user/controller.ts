@@ -13,7 +13,7 @@ app.get(
       const id = c.req.query("id") ?? "none";
       return `user-${id}`;
     },
-    cacheControl: "max-age=3600",
+    cacheControl: "max-age=60",
     wait: true,
   }),
   async (c) => {
