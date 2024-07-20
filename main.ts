@@ -1,4 +1,5 @@
 import { Hono } from "hono";
+import { showRoutes } from 'hono/dev'
 import { logger } from "hono/logger";
 import { cors } from "hono/cors";
 import { secureHeaders } from "hono/secure-headers";
@@ -31,5 +32,7 @@ app.onError((err, c) => {
   console.error(err);
   return c.render(ErrorLayout());
 });
+
+showRoutes(app)
 
 Deno.serve(app.fetch);
