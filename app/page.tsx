@@ -1,4 +1,4 @@
-import { type Item } from "../utils/types.ts";
+import { type Item } from "../features/hackerNews.ts";
 import { BaseHead } from "../components/BaseHead.tsx";
 import { ItemSummary } from "../components/ItemSummary.tsx";
 

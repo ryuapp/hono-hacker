@@ -1,7 +1,6 @@
 import { Hono } from "hono";
-
 import Home from "./page.tsx";
-import { getItems } from "../utils/api.ts";
+import { getItems } from "../features/hackerNews.ts";
 
 const app = new Hono();
 

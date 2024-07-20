@@ -1,6 +1,6 @@
 import { useState } from "hono/jsx";
-import { type Item } from "../../utils/types.ts";
-import { timeAgo } from "../../utils/api.ts";
+import { type Item } from "../../features/hackerNews.ts";
+import { timeAgo } from "../../features/hackerNews.ts";
 
 type CommentsProps = {
   comments?: Item[];

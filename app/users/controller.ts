@@ -1,5 +1,5 @@
 import { Hono } from "hono";
-import { getUser } from "../../utils/api.ts";
+import { getUser } from "../../features/hackerNews.ts";
 
 import UserPage from "./page.tsx";
 

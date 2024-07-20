@@ -1,7 +1,7 @@
 import { BaseHead } from "../../components/BaseHead.tsx";
 import { Comments } from "./Comments.tsx";
 import { ItemSummary } from "../../components/ItemSummary.tsx";
-import { Item } from "../../utils/types.ts";
+import { Item } from "../../features/hackerNews.ts";
 
 export default function ItemPage(item: Item) {
   return (

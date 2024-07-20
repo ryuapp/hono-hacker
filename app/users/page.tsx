@@ -1,4 +1,4 @@
-import { User } from "../../utils/types.ts";
+import { User } from "../../features/hackerNews.ts";
 
 export default function UserPage(user: User) {
   return (

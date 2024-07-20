@@ -1,5 +1,4 @@
-import { type Item } from "../utils/types.ts";
-import { getUrl, host, timeAgo } from "../utils/api.ts";
+import { getUrl, host, type Item, timeAgo } from "../features/hackerNews.ts";
 
 type ItemSummaryProps = {
   item: Item;
