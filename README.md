@@ -1,6 +1,7 @@
 # Hono Hacker News
 
-Hacker News clone made with [Hono](https://hono.dev).
+[Hacker News](https://news.ycombinator.com/news) clone made with [Hono](https://hono.dev).\
+This is deployed to [Deno Deploy](https://deno.com/deploy).
 
 ## Usage
 
