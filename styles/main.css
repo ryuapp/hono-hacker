@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.comments a:not(.user){
+    @apply underline;
+}
+
+.comments pre{
+    @apply whitespace-pre-wrap;
+}

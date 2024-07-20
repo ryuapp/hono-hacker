@@ -6,7 +6,16 @@ type CommentsProps = {
   comments: Item[];
 };
 
-export function Comments(props: CommentsProps) {
+export function CommentSection(props: CommentsProps) {
+  const { comments } = props;
+  return ((
+    <div class="comments">
+      <Comments comments={comments} />
+    </div>
+  ));
+}
+
+function Comments(props: CommentsProps) {
   const { comments } = props;
   return ((
     <div>
@@ -27,7 +36,7 @@ function Comment(props: CommentProps) {
     <>
       <div class="text-xs text-gray-500 pt-2 pb-1">
         <span class="cursor-pointer mr-1 text-sm text-gray-300">▲</span>
-        <a class="hover:underline" href={`/user?id=${comment.user}`}>
+        <a class="user hover:underline" href={`/user?id=${comment.user}`}>
           {comment.user}
         </a>{" "}
         {timeAgo(comment.time)} ago{" "}
