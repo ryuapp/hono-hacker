@@ -38,17 +38,13 @@ export type User = {
 const BASE_URL = "https://hacker-news.firebaseio.com/v0";
 
 export async function getItems(): Promise<Item[]> {
-  const resp = await fetch(
-    `${BASE_URL}/topstories.json`,
-  );
+  const resp = await fetch(`${BASE_URL}/topstories.json`);
   if (!resp.ok) {
     const body = await resp.text();
     throw new Error(`${resp.status} ${body}`);
   }
   const itemIds = Object.values(await resp.json()).slice(0, 30) as number[];
-  return await Promise.all(
-    itemIds.map((id) => fetchItem(id)),
-  );
+  return await Promise.all(itemIds.map((id) => fetchItem(id)));
 }
 
 export async function getItem(id: number): Promise<Item> {
@@ -61,19 +57,14 @@ export async function getUser(id: string): Promise<User> {
   return user;
 }
 
-async function fetchItem(
-  id: number,
-  withComments = false,
-): Promise<Item> {
-  const resp = await fetch(
-    `${BASE_URL}/item/${id}.json`,
-  );
+async function fetchItem(id: number, withComments = false): Promise<Item> {
+  const resp = await fetch(`${BASE_URL}/item/${id}.json`);
   if (!resp.ok) {
     const body = await resp.text();
     throw new Error(`${resp.status} ${body}`);
   }
 
-  const item = await resp.json() as ItemRaw;
+  const item = (await resp.json()) as ItemRaw;
   item.kids = item.kids || [];
   return {
     id: item.id,
@@ -100,7 +91,7 @@ async function fetchUser(id: string): Promise<User> {
     throw new Error(`${resp.status} ${body}`);
   }
 
-  const user = await resp.json() as UserRaw;
+  const user = (await resp.json()) as UserRaw;
   return {
     id: user.id,
     created_at: user.created,
@@ -117,10 +108,10 @@ export function isAbsolute(url: string) {
 }
 
 export function host(url: string) {
-  const host = url.replace(/^https?:\/\//, "").replace(/\/.*$/, "").replace(
-    "?id=",
-    "/",
-  );
+  const host = url
+    .replace(/^https?:\/\//, "")
+    .replace(/\/.*$/, "")
+    .replace("?id=", "/");
   const parts = host.split(".").slice(-3);
   if (parts[0] === "www") parts.shift();
   return parts.join(".");
