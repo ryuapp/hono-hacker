@@ -19,14 +19,14 @@ export function BaseHead(
       <meta property="og:url" content={url} />
       <meta
         property="og:image"
-        content={SITE_URL + "ogp.png"}
+        content={SITE_URL + "/ogp.png"}
       />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta
         name="twitter:image"
-        content={SITE_URL + "ogp.png"}
+        content={SITE_URL + "/ogp.png"}
       />
     </>
   );

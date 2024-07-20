@@ -4,11 +4,11 @@
     "tailwindcss": "npx tailwindcss -i ./styles/main.css -o ./static/main.gen.css --minify --watch"
   },
   "imports": {
-    "hono": "jsr:@hono/hono@^4.4.12",
+    "hono": "jsr:@hono/hono@^4.5.0",
     "tailwindcss": "npm:tailwindcss@^3.4.4"
   },
   "compilerOptions": {
-    "jsx": "precompile",
+    "jsx": "react-jsx",
     "jsxImportSource": "hono/jsx"
   },
   "exclude": ["./static/*"]
