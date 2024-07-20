@@ -1,11 +1,10 @@
 import { Hono } from "hono";
-import { showRoutes } from 'hono/dev'
+import { showRoutes } from "hono/dev";
 import { logger } from "hono/logger";
 import { cors } from "hono/cors";
 import { secureHeaders } from "hono/secure-headers";
 import { jsxRenderer } from "hono/jsx-renderer";
 import { serveStatic } from "hono/deno";
-
 import { BaseLayout } from "./layouts/BaseLayout.tsx";
 import { NotFoundLayout } from "./layouts/NotFoundLayout.tsx";
 import { ErrorLayout } from "./layouts/ErrorLayout.tsx";
@@ -15,8 +14,10 @@ import item from "./app/item/controller.ts";
 import user from "./app/user/controller.ts";
 
 const app = new Hono();
-app.use(logger(), cors(), secureHeaders());
 app.use(
+  logger(),
+  cors(),
+  secureHeaders(),
   jsxRenderer(({ children }) => {
     return BaseLayout(children);
   }),
@@ -33,6 +34,6 @@ app.onError((err, c) => {
   return c.render(ErrorLayout());
 });
 
-showRoutes(app)
+showRoutes(app);
 
 Deno.serve(app.fetch);
