@@ -7,7 +7,7 @@ export default function Home(items: Array<Item>) {
     <>
       <PageHead />
       <div class="bg-white pt-1 pb-3 px-3">
-        {items.map((item) => <ItemSummary item={item} />)}
+        {items.map((item, i) => <ItemSummary item={item} rank={i + 1} />)}
       </div>
     </>
   );

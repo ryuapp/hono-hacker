@@ -2,15 +2,23 @@ import { getUrl, host, type Item, timeAgo } from "../features/hackerNews.ts";
 
 type ItemSummaryProps = {
   item: Item;
+  rank?: number;
 };
 
 export function ItemSummary(props: ItemSummaryProps) {
-  const { item } = props;
-
+  const { item, rank } = props;
   return (
     <div>
       <div class="my-1">
-        <span class="cursor-pointer mr-1 text-sm text-gray-300">▲</span>
+        {rank
+          ? (
+            <span class="text-sm text-gray-500 mr-1">
+              {rank < 10 ? <>&nbsp;</> : ""}
+              {rank}.
+            </span>
+          )
+          : null}
+        <span class="cursor-pointer mr-1 text-xs text-gray-400">▲</span>
         <span class="mr-1 text-sm">
           <a href={getUrl(item)}>{item.title}</a>
         </span>
