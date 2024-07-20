@@ -8,20 +8,20 @@ type CommentsProps = {
 
 export function CommentSection(props: CommentsProps) {
   const { comments } = props;
-  return ((
+  return (
     <div class="comments">
       <Comments comments={comments} />
     </div>
-  ));
+  );
 }
 
 function Comments(props: CommentsProps) {
   const { comments } = props;
-  return ((
+  return (
     <div>
       {comments.map((comment) => <Comment comment={comment} />)}
     </div>
-  ));
+  );
 }
 
 type CommentProps = {
