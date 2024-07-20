@@ -10,8 +10,8 @@ import { NotFoundLayout } from "./layouts/NotFoundLayout.tsx";
 import { ErrorLayout } from "./layouts/ErrorLayout.tsx";
 
 import home from "./app/controller.ts";
-import items from "./app/items/controller.ts";
-import users from "./app/users/controller.ts";
+import item from "./app/item/controller.ts";
+import user from "./app/user/controller.ts";
 
 const app = new Hono();
 app.use(logger(), cors(), secureHeaders());
@@ -23,8 +23,8 @@ app.use(
 app.use("/static/*", serveStatic({ root: "./", onNotFound: () => {} }));
 
 app.route("/", home);
-app.route("/items", items);
-app.route("/users", users);
+app.route("/item", item);
+app.route("/user", user);
 
 app.notFound((c) => c.render(NotFoundLayout()));
 app.onError((err, c) => {

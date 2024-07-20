@@ -20,11 +20,11 @@ export function ItemSummary(props: ItemSummaryProps) {
       </div>
       <div class="text-xs text-gray-500">
         {item.points} point{item.points > 1 ? "s" : ""} by{" "}
-        <a class="hover:underline" href={`/users?id=${item.user}`}>
+        <a class="hover:underline" href={`/user?id=${item.user}`}>
           {item.user}
         </a>{" "}
         {timeAgo(item.time)} ago |{" "}
-        <a class="hover:underline" href={`/items?id=${item.id}`}>
+        <a class="hover:underline" href={`/item?id=${item.id}`}>
           {item.comments_count}{" "}
           comment{item.comments_count && item.comments_count === 1 ? "" : "s"}
         </a>
