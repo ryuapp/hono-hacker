@@ -6,7 +6,7 @@ type HeadProps = {
   url?: string;
 };
 
-export function BaseHead(
+export function PageHead(
   { title = SITE_TITLE, description = DESCRIPTION, url = SITE_URL }: HeadProps,
 ) {
   return (

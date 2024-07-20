@@ -1,11 +1,11 @@
 import { type Item } from "../features/hackerNews.ts";
-import { BaseHead } from "../components/BaseHead.tsx";
+import { PageHead } from "../components/PageHead.tsx";
 import { ItemSummary } from "../components/ItemSummary.tsx";
 
 export default function Home(items: Array<Item>) {
   return (
     <>
-      <BaseHead />
+      <PageHead />
       <div class="bg-white pt-1 pb-3 px-3">
         {items.map((item) => <ItemSummary item={item} />)}
       </div>

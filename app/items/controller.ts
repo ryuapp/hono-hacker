@@ -10,7 +10,9 @@ app.get("/", async (c) => {
   if (!id) return c.notFound();
 
   const item = await getItem(Number(id));
-  return c.render(ItemPage(item));
+  const url = c.req.url;
+
+  return c.render(ItemPage({ item, url }));
 });
 
 export default app;

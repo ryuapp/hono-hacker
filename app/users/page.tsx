@@ -1,8 +1,18 @@
 import { User } from "../../features/hackerNews.ts";
+import { PageHead } from "../../components/PageHead.tsx";
+import { SITE_TITLE } from "../../config/site.ts";
 
-export default function UserPage(user: User) {
+type UserProps = {
+  user: User;
+  url: string;
+};
+
+export default function UserPage(props: UserProps) {
+  const { user, url } = props;
+
   return (
     <div class="bg-white pt-1 pb-3 px-3">
+      <PageHead title={user.id + " | " + SITE_TITLE} url={url} />
       <ul class="my-1 text-sm">
         <li>
           <span class="inline-block min-w-3.5">User:</span> {user.id}
