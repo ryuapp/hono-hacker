@@ -32,7 +32,7 @@ function Comment(props: CommentProps) {
     <>
       <div class="text-xs text-gray-500 pt-2 pb-1">
         <span class="cursor-pointer mr-1 text-sm text-gray-300">▲</span>
-        <a class="hover:underline" href={`/users/${comment.user}`}>
+        <a class="hover:underline" href={`/users?id=${comment.user}`}>
           {comment.user}
         </a>{" "}
         {timeAgo(comment.time)} ago{" "}

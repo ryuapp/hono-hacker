@@ -109,7 +109,7 @@ async function fetchUser(id: string): Promise<User> {
 }
 
 export function getUrl(item: Item) {
-  return item.url && isAbsolute(item.url) ? item.url : `/items/${item.id}`;
+  return item.url && isAbsolute(item.url) ? item.url : `/items?id=${item.id}`;
 }
 
 export function isAbsolute(url: string) {

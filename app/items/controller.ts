@@ -5,8 +5,8 @@ import ItemPage from "./page.tsx";
 
 const app = new Hono();
 
-app.get("/:id", async (c) => {
-  const id = c.req.param("id");
+app.get("/", async (c) => {
+  const id = c.req.query("id");
   if (!id) return c.notFound();
 
   const item = await getItem(Number(id));
