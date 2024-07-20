@@ -1,4 +1,5 @@
 import { Hono } from "hono";
+import { cache } from "hono/cache";
 import { showRoutes } from "hono/dev";
 import { logger } from "hono/logger";
 import { cors } from "hono/cors";
@@ -23,6 +24,15 @@ app.use(
   }),
 );
 app.use("/static/*", serveStatic({ root: "./", onNotFound: () => {} }));
+
+app.get(
+  "*",
+  cache({
+    cacheName: "hono-hacker-news",
+    cacheControl: "max-age=60",
+    wait: true,
+  }),
+);
 
 app.route("/", home);
 app.route("/item", item);
