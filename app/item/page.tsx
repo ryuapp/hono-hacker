@@ -17,7 +17,7 @@ export default function ItemPage(props: ItemProps) {
       <div class="bg-white pt-1 pb-3 px-3">
         <div class="divide-y space-y-3">
           <ItemSummary item={item} />
-          <Comments comments={item.comments} />
+          {item.comments ? <Comments comments={item.comments} /> : null}
         </div>
       </div>
     </>
