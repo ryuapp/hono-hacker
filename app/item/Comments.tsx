@@ -3,21 +3,16 @@ import { type Item } from "../../features/hackerNews.ts";
 import { timeAgo } from "../../features/hackerNews.ts";
 
 type CommentsProps = {
-  comments?: Item[];
+  comments: Item[];
 };
 
 export function Comments(props: CommentsProps) {
   const { comments } = props;
-
-  return (
-    comments && comments.length > 0
-      ? (
-        <div>
-          {comments.map((comment) => <Comment comment={comment} />)}
-        </div>
-      )
-      : null
-  );
+  return ((
+    <div>
+      {comments.map((comment) => <Comment comment={comment} />)}
+    </div>
+  ));
 }
 
 type CommentProps = {
@@ -38,21 +33,17 @@ function Comment(props: CommentProps) {
         {timeAgo(comment.time)} ago{" "}
         <button onClick={() => setOpen(!open)}>{open ? "[-]" : `[+]`}</button>
       </div>
-      {open
-        ? (
-          <>
-            <div
-              class="text-[0.825rem] break-words"
-              dangerouslySetInnerHTML={{
-                __html: comment.content ?? "",
-              }}
-            />
-            <div class="pl-5">
-              <Comments comments={comment.comments} />
-            </div>
-          </>
-        )
-        : null}
+      <div
+        class="text-[0.825rem] break-words"
+        dangerouslySetInnerHTML={{
+          __html: comment.content ?? "",
+        }}
+      />
+      <div class="pl-5">
+        {comment.comments && comment.comments.length > 0
+          ? <Comments comments={comment.comments} />
+          : null}
+      </div>
     </>
   );
 }

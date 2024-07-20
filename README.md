@@ -1,6 +1,5 @@
 # Hono Hacker News
 
-WIP. Some styles and pages are broken.\
 Hacker News clone made with [Hono](https://hono.dev).
 
 ## Usage
