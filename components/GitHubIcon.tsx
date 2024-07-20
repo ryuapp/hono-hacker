@@ -1,7 +1,7 @@
 export function GitHubIcon() {
   return (
     <svg
-      class="h-4 w-4 text-gray-500"
+      class="h-5 w-5 text-gray-500"
       width="14"
       height="14"
       viewBox="0 0 14 14"
