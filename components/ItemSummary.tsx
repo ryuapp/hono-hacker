@@ -25,10 +25,8 @@ export function ItemSummary(props: ItemSummaryProps) {
         </a>{" "}
         {timeAgo(item.time)} ago |{" "}
         <a class="hover:underline" href={`/item?id=${item.id}`}>
-          {`${item.comments_count} comment` + item.comments_count &&
-              item.comments_count === 1
-            ? ""
-            : "s"}
+          {`${item.comments_count} comment` +
+            (item.comments_count && item.comments_count > 1 ? "s" : "")}
         </a>
       </div>
     </div>
