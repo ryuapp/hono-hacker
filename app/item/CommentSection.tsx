@@ -35,7 +35,7 @@ function Comment(props: CommentProps) {
   return (
     <>
       <div class="text-xs text-gray-500 pt-2 pb-1">
-        <span class="cursor-pointer mr-1 text-sm text-gray-300">▲</span>
+        <span class="cursor-pointer mr-1 text-sm text-gray-400">▲</span>
         <a class="user hover:underline" href={`/user?id=${comment.user}`}>
           {comment.user}
         </a>{" "}
