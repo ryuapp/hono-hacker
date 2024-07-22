@@ -65,7 +65,7 @@ async function fetchItem(id: number, withComments = false): Promise<Item> {
   }
 
   const item = (await resp.json()) as ItemRaw;
-  item.kids = item.kids || [];
+  const kids = item.kids || [];
   return {
     id: item.id,
     user: item.by,
@@ -75,10 +75,10 @@ async function fetchItem(id: number, withComments = false): Promise<Item> {
     url: item.url,
     type: item.type,
     title: item.title,
-    comments_count: Object.values(item.kids).length,
+    comments_count: Object.values(kids).length,
     comments: withComments
       ? await Promise.all(
-        Object.values(item.kids).map((id) => fetchItem(id, withComments)),
+        Object.values(kids).map((id) => fetchItem(id, withComments)),
       )
       : [],
   };
