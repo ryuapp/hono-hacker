@@ -44,7 +44,12 @@ export async function getItems(): Promise<Item[]> {
     throw new Error(`${resp.status} ${body}`);
   }
   const itemIds = Object.values(await resp.json()).slice(0, 30) as number[];
-  return await Promise.all(itemIds.map((id) => fetchItem(id)));
+  return await Promise.allSettled(itemIds.map((id) => fetchItem(id))).then((
+    results,
+  ) =>
+    results.filter((result) => result.status === "fulfilled")
+      .map((result) => result.value)
+  );
 }
 
 export async function getItem(id: number): Promise<Item> {
