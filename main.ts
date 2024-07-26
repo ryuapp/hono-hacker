@@ -10,9 +10,7 @@ import { BaseLayout } from "./layouts/BaseLayout.tsx";
 import { NotFoundLayout } from "./layouts/NotFoundLayout.tsx";
 import { ErrorLayout } from "./layouts/ErrorLayout.tsx";
 
-import home from "./app/controller.ts";
-import item from "./app/item/controller.ts";
-import user from "./app/user/controller.ts";
+import { autoroutes } from "./lib/autoroutes.ts";
 
 const app = new Hono();
 app.use(
@@ -36,9 +34,7 @@ if (Deno.env.get("IS_DEVELOPMENT")) {
   );
 }
 
-app.route("/", home);
-app.route("/item", item);
-app.route("/user", user);
+await autoroutes(app, { routeDir: "./app", prefix: "controller.ts" });
 
 app.notFound((c) => c.render(NotFoundLayout()));
 app.onError((err, c) => {

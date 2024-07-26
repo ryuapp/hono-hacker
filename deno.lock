@@ -3,12 +3,24 @@
   "packages": {
     "specifiers": {
       "jsr:@hono/hono@^4.5.0": "jsr:@hono/hono@4.5.0",
+      "jsr:@std/fs@^1.0.0": "jsr:@std/fs@1.0.0",
+      "jsr:@std/path@^1.0.2": "jsr:@std/path@1.0.2",
+      "npm:@types/node": "npm:@types/node@18.16.19",
       "npm:tailwindcss@3.4.4": "npm:tailwindcss@3.4.4_postcss@8.4.39",
       "npm:tailwindcss@^3.4.4": "npm:tailwindcss@3.4.4_postcss@8.4.39"
     },
     "jsr": {
       "@hono/hono@4.5.0": {
         "integrity": "4a410f7773ac4b5b0eb4520b26c7ab7795a271d57a9df7fa1953ded6b90ccaf7"
+      },
+      "@std/fs@1.0.0": {
+        "integrity": "d72e4a125af7168d717a2ed1dca77a728b422b0d138fd20579e3fa41a77da943",
+        "dependencies": [
+          "jsr:@std/path@^1.0.2"
+        ]
+      },
+      "@std/path@1.0.2": {
+        "integrity": "a452174603f8c620bd278a380c596437a9eef50c891c64b85812f735245d9ec7"
       }
     },
     "npm": {
@@ -74,6 +86,10 @@
       },
       "@pkgjs/parseargs@0.11.0": {
         "integrity": "sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==",
+        "dependencies": {}
+      },
+      "@types/node@18.16.19": {
+        "integrity": "sha512-IXl7o+R9iti9eBW4Wg2hx1xQDig183jj7YLn8F7udNceyfkbn1ZxmzZXuak20gR40D7pIkIY1kYGx5VIGbaHKA==",
         "dependencies": {}
       },
       "ansi-regex@5.0.1": {
@@ -630,6 +646,8 @@
   "workspace": {
     "dependencies": [
       "jsr:@hono/hono@^4.5.0",
+      "jsr:@std/fs@^1.0.0",
+      "jsr:@std/path@^1.0.2",
       "npm:tailwindcss@^3.4.4"
     ]
   }
