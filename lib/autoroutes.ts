@@ -19,7 +19,8 @@ export async function autoroutes(
   }
 
   for (const entry of entries) {
-    const entryPath = relative(execPath, entry.path).replace(/\.\.\\/g, "../");
+    const entryPath = relative(execPath, entry.path).replace(/\.\.\\/g, "../")
+      .replace(/\\/g, "/");
     const dirName = routeDir.replace(/\.\/|\/$/, "");
     const routePath = entry.path.replace(dirName, "").replace(prefix, "")
       .replace(
