@@ -11,6 +11,8 @@ Start the project:
 deno task start
 ```
 
+Setting `IS_DEVELOPMENT` to an environment variable disables caches.
+
 ## Related
 
 - [Fresh Hacker News](https://github.com/morinokami/fresh-hacker) - Hacker News
