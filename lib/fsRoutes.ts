@@ -19,7 +19,7 @@ export async function fsRoutes(
     const entryPath = await Deno.realPath(entry.path);
     let importPath = path.toFileUrl(entryPath).toString();
     if (Deno.build.os !== "windows") {
-      importPath = path.resolve(entryPath);
+      importPath = path.resolve(entry.path);
     }
     const dirPath = await Deno.realPath(dir);
     const routePath = entryPath.replace(dirPath, "").replace(prefix, "")
