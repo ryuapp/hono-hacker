@@ -1,6 +1,6 @@
 import { walk } from "@std/fs/walk";
 import { type Hono } from "hono";
-import { toFileUrl } from "@std/path/to-file-url";
+import * as path from "@std/path";
 type FsRoutesOptions = {
   dir: string;
   prefix: string;
@@ -17,7 +17,10 @@ export async function fsRoutes(
 
   for (const entry of entries) {
     const entryPath = await Deno.realPath(entry.path);
-    const importPath = toFileUrl(entryPath).toString();
+    let importPath = path.toFileUrl(entryPath).toString();
+    if (Deno.build.os !== "windows") {
+      importPath = path.resolve(importPath);
+    }
     const dirPath = await Deno.realPath(dir);
     const routePath = entryPath.replace(dirPath, "").replace(prefix, "")
       .replace(
