@@ -1,27 +1,26 @@
-import { argv } from "node:process";
 import { walk } from "@std/fs/walk";
-import { Hono } from "hono";
-import { relative } from "@std/path/relative";
+import { type Hono } from "hono";
 
-type AutoroutesOptions = {
-  routeDir: string;
+type FsRoutesOptions = {
+  dir: string;
   prefix: string;
 };
 
-export async function autoroutes(
+export async function fsRoutes(
   app: Hono,
-  { routeDir, prefix }: AutoroutesOptions,
+  { dir, prefix }: FsRoutesOptions,
 ): Promise<void> {
-  const execPath = argv[1];
   const entries = [];
-  for await (const entry of walk(routeDir)) {
+  for await (const entry of walk(dir)) {
     if (entry.isFile && entry.name === prefix) entries.push(entry);
   }
 
   for (const entry of entries) {
-    const entryPath = relative(execPath, entry.path).replace(/\.\.\\/g, "../")
-      .replace(/\\/g, "/");
-    const dirName = routeDir.replace(/\.\/|\/$/, "");
+    const entryPath = new URL(await Deno.realPath(entry.path)).pathname.replace(
+      /\\/g,
+      "/",
+    );
+    const dirName = dir.replace(/\.\/|\/$/, "");
     const routePath = entry.path.replace(dirName, "").replace(prefix, "")
       .replace(
         /\\/g,

@@ -10,7 +10,7 @@ import { BaseLayout } from "./layouts/BaseLayout.tsx";
 import { NotFoundLayout } from "./layouts/NotFoundLayout.tsx";
 import { ErrorLayout } from "./layouts/ErrorLayout.tsx";
 
-import { autoroutes } from "./lib/autoroutes.ts";
+import { fsRoutes } from "./lib/fsRoutes.ts";
 
 const app = new Hono();
 app.use(
@@ -21,7 +21,7 @@ app.use(
     return BaseLayout(children);
   }),
 );
-app.use("/static/*", serveStatic({ root: "./", onNotFound: () => {} }));
+app.use("/static/*", serveStatic({ root: "./", onNotFound: () => { } }));
 
 if (Deno.env.get("IS_DEVELOPMENT")) {
   app.get(
@@ -34,7 +34,7 @@ if (Deno.env.get("IS_DEVELOPMENT")) {
   );
 }
 
-await autoroutes(app, { routeDir: "./app", prefix: "controller.ts" });
+await fsRoutes(app, { dir: "./app", prefix: "controller.ts" });
 
 app.notFound((c) => c.render(NotFoundLayout()));
 app.onError((err, c) => {
