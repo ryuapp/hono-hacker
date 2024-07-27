@@ -5,6 +5,7 @@
   },
   "imports": {
     "@std/fs": "jsr:@std/fs@^1.0.0",
+    "@std/path": "jsr:@std/path@^1.0.2",
     "hono": "jsr:@hono/hono@^4.5.0",
     "tailwindcss": "npm:tailwindcss@^3.4.4"
   },
