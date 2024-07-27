@@ -21,7 +21,7 @@ app.use(
     return BaseLayout(children);
   }),
 );
-app.use("/static/*", serveStatic({ root: "./", onNotFound: () => { } }));
+app.use("/static/*", serveStatic({ root: "./", onNotFound: () => {} }));
 
 if (Deno.env.get("IS_DEVELOPMENT")) {
   app.get(

@@ -16,18 +16,20 @@ export async function fsRoutes(
   }
 
   for (const entry of entries) {
-    const entryPath = new URL(await Deno.realPath(entry.path)).pathname.replace(
-      /\\/g,
-      "/",
-    );
-    const dirName = dir.replace(/\.\/|\/$/, "");
-    const routePath = entry.path.replace(dirName, "").replace(prefix, "")
+    const entryPath = await Deno.realPath(entry.path);
+    const importPath = new URL(entryPath).pathname
+      .replace(
+        /\\/g,
+        "/",
+      );
+    const dirPath = await Deno.realPath(dir);
+    const routePath = entryPath.replace(dirPath, "").replace(prefix, "")
       .replace(
         /\\/g,
         "/",
       ).replace(/\/$/, "");
 
-    const subapp = await import(entryPath).then((mod) => mod.default);
+    const subapp = await import(importPath).then((mod) => mod.default);
     app.route(routePath, subapp);
   }
 }
