@@ -17,10 +17,12 @@ export async function fsRoutes(
 
   for (const entry of entries) {
     const entryPath = await Deno.realPath(entry.path);
+    // FIXME: This is a hack to make it work on Deno Deploy
     let importPath = entry.path.replace(
       /\\/g,
       "/",
-    );
+    ).replace("src/", "");
+
     if (Deno.build.os !== "windows") {
       importPath = path.resolve(entry.path);
     }
