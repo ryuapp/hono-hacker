@@ -10,7 +10,7 @@ import { BaseLayout } from "./layouts/BaseLayout.tsx";
 import { NotFoundLayout } from "./layouts/NotFoundLayout.tsx";
 import { ErrorLayout } from "./layouts/ErrorLayout.tsx";
 
-import { fsRoutes } from "./lib/fsRoutes.ts";
+import { fsRoutes } from "./fsRoutes.ts";
 
 const app = new Hono();
 app.use(

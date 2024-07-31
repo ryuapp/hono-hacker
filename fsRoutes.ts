@@ -17,7 +17,10 @@ export async function fsRoutes(
 
   for (const entry of entries) {
     const entryPath = await Deno.realPath(entry.path);
-    let importPath = path.toFileUrl(entryPath).toString();
+    let importPath = entry.path.replace(
+      /\\/g,
+      "/",
+    );
     if (Deno.build.os !== "windows") {
       importPath = path.resolve(entry.path);
     }
@@ -27,8 +30,7 @@ export async function fsRoutes(
         /\\/g,
         "/",
       ).replace(/\/$/, "");
-
-    const subapp = await import(importPath).then((mod) => mod.default);
+    const subapp = await import("./" + importPath).then((mod) => mod.default);
     app.route(routePath, subapp);
   }
 }
