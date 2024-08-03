@@ -1,4 +1,7 @@
 {
+  "workbench.editor.customLabels.patterns": {
+    "**/{page,controller}.{js,ts,jsx,tsx}": "${dirname}/${filename}.${extname}"
+  },
   "prettier.enable": false,
   "deno.enable": true,
   "deno.lint": true,
