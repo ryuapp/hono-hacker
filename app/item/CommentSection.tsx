@@ -32,7 +32,10 @@ function Comment(props: CommentProps) {
   const { comment } = props;
   const [open, setOpen] = useState(true);
 
-  if (!comment.user || comment.content === "[dead]") {
+  if (
+    !comment.user ||
+    (comment.content?.startsWith("[") && comment.content?.endsWith("]"))
+  ) {
     return <></>;
   }
 
