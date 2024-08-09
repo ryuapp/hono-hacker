@@ -32,13 +32,6 @@ function Comment(props: CommentProps) {
   const { comment } = props;
   const [open, setOpen] = useState(true);
 
-  if (
-    !comment.user ||
-    (comment.content?.startsWith("[") && comment.content?.endsWith("]"))
-  ) {
-    return <></>;
-  }
-
   return (
     <>
       <div class="text-xs text-gray-500 pt-2 pb-1">

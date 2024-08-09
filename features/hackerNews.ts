@@ -52,8 +52,26 @@ export async function getItems(): Promise<Item[]> {
   );
 }
 
+// Filter out comments that are dead or flagged
+function filterComments(item: Item) {
+  if (item.comments) {
+    item.comments = item.comments.filter((comment) => {
+      if (
+        !comment.user ||
+        (comment.content?.startsWith("[") && comment.content?.endsWith("]"))
+      ) {
+        return false;
+      }
+      filterComments(comment);
+      return true;
+    });
+  }
+}
+
 export async function getItem(id: number): Promise<Item> {
   const item = await fetchItem(id, true);
+  filterComments(item);
+
   return item;
 }
 
