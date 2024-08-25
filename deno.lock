@@ -2,13 +2,13 @@
   "version": "3",
   "packages": {
     "specifiers": {
-      "jsr:@hono/hono@^4.5.0": "jsr:@hono/hono@4.5.0",
+      "jsr:@hono/hono@^4.5.8": "jsr:@hono/hono@4.5.8",
       "npm:tailwindcss@3.4.4": "npm:tailwindcss@3.4.4_postcss@8.4.39",
       "npm:tailwindcss@^3.4.4": "npm:tailwindcss@3.4.4_postcss@8.4.39"
     },
     "jsr": {
-      "@hono/hono@4.5.0": {
-        "integrity": "4a410f7773ac4b5b0eb4520b26c7ab7795a271d57a9df7fa1953ded6b90ccaf7"
+      "@hono/hono@4.5.8": {
+        "integrity": "60f5b4c61edae2016022d6087b4fc381f378d337f046f56e00a3a3512c7e9c16"
       }
     },
     "npm": {
@@ -629,7 +629,7 @@
   "remote": {},
   "workspace": {
     "dependencies": [
-      "jsr:@hono/hono@^4.5.0",
+      "jsr:@hono/hono@^4.5.8",
       "npm:tailwindcss@^3.4.4"
     ]
   }

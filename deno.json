@@ -4,7 +4,7 @@
     "tailwindcss": "tailwindcss -i ./styles/main.css -o ./static/main.gen.css --minify --watch"
   },
   "imports": {
-    "hono": "jsr:@hono/hono@^4.5.0",
+    "hono": "jsr:@hono/hono@^4.5.8",
     "tailwindcss": "npm:tailwindcss@^3.4.4"
   },
   "compilerOptions": {
