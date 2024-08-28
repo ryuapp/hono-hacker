@@ -25,16 +25,14 @@ app.use(
 );
 app.use("/static/*", serveStatic({ root: "./", onNotFound: () => {} }));
 
-if (Deno.env.get("IS_DEVELOPMENT")) {
-  app.get(
-    "*",
-    cache({
-      cacheName: "hono-hacker-news",
-      cacheControl: "max-age=60",
-      wait: true,
-    }),
-  );
-}
+app.get(
+  "*",
+  cache({
+    cacheName: "hono-hacker-news",
+    cacheControl: "max-age=60",
+    wait: true,
+  }),
+);
 
 app.route("/", home);
 app.route("/item", item);
