@@ -9,3 +9,7 @@
 .comments pre{
     @apply whitespace-pre-wrap;
 }
+
+a:visited{
+    color: gray;
+}

@@ -5,8 +5,8 @@ export function Header() {
         <a href="/">
           <img src="/static/logo.svg" alt="Hono Logo" class="h-5 w-5" />
         </a>
-        <a href="/">
-          <span class="font-bold">Hono Hacker News</span>
+        <a style="color: black;" href="/">
+          <span class="font-bold ">Hono Hacker News</span>
         </a>
       </nav>
     </header>
