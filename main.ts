@@ -15,6 +15,9 @@ import item from "./app/item/controller.ts";
 import user from "./app/user/controller.ts";
 import { CACHE_NAME } from "./config/site.ts";
 
+// Import cron.ts to run the cron job on Deno deploy
+import "./cron.ts";
+
 const app = new Hono();
 app.use(
   logger(),

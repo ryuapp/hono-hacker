@@ -1,6 +1,6 @@
 {
   "tasks": {
-    "start": "deno run -A --unstable-hmr=main.ts main.ts & deno task tailwindcss",
+    "start": "deno run -A --unstable-hmr=main.ts --unstable-cron main.ts & deno task tailwindcss",
     "tailwindcss": "tailwindcss -i ./styles/main.css -o ./static/main.gen.css --minify --watch"
   },
   "imports": {
