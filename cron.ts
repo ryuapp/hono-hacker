@@ -1,6 +1,8 @@
-import { CACHE_NAME, SITE_URL } from "./config/site.ts";
+import { CACHE_NAME } from "./config/site.ts";
 
-const URL = Deno.env.get("IS_DEVELOPMENT") ? "http://localhost:8000" : SITE_URL;
+const URL = Deno.env.get("IS_DEVELOPMENT")
+  ? "http://localhost:8000"
+  : "https://127.0.0.1:80";
 
 Deno.cron("Remove cache every 2 minutes", "*/2 * * * *", async () => {
   console.log("Removing cache");
