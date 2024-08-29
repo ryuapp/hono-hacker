@@ -13,6 +13,7 @@ import { ErrorLayout } from "./layouts/ErrorLayout.tsx";
 import home from "./app/controller.ts";
 import item from "./app/item/controller.ts";
 import user from "./app/user/controller.ts";
+import { CACHE_NAME } from "./config/site.ts";
 
 const app = new Hono();
 app.use(
@@ -28,7 +29,7 @@ app.use("/static/*", serveStatic({ root: "./", onNotFound: () => {} }));
 app.get(
   "*",
   cache({
-    cacheName: "hono-hacker-news",
+    cacheName: CACHE_NAME,
     cacheControl: "max-age=60",
     wait: true,
   }),
