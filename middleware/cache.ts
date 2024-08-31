@@ -138,12 +138,11 @@ export const cache = (options: {
     const response = await cache.match(key);
     if (response) {
       if (options.duration) {
-        const duration = response.headers.get(durationName);
+        const duration = Number(response.headers.get(durationName));
         if (duration) {
-          const now = new Date();
-          const expiration = new Date(duration);
+          const now = Date.now();
           response.headers.delete(durationName);
-          if (expiration > now) {
+          if (duration > now) {
             return new Response(response.body, response);
           }
         }
@@ -159,9 +158,8 @@ export const cache = (options: {
     addHeader(c);
     const res = c.res.clone();
     if (options.duration) {
-      const expiration = new Date();
-      expiration.setSeconds(expiration.getSeconds() + options.duration);
-      res.headers.set(durationName, expiration.toUTCString());
+      const expiration = Date.now() + options.duration * 1000;
+      res.headers.set(durationName, String(expiration));
     }
     if (options.wait) {
       await cache.put(key, res);
