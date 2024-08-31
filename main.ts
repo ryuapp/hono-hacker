@@ -1,5 +1,5 @@
 import { Hono } from "hono";
-import { cache } from "hono/cache";
+import { cache } from "./middleware/cache.ts";
 import { showRoutes } from "hono/dev";
 import { logger } from "hono/logger";
 import { cors } from "hono/cors";
@@ -35,6 +35,7 @@ app.get(
     cacheName: CACHE_NAME,
     cacheControl: "max-age=60",
     wait: true,
+    duration: 120,
   }),
 );
 
