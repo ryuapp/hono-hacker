@@ -27,7 +27,7 @@ app.use(
     return BaseLayout(children);
   }),
 );
-app.use("/static/*", serveStatic({ root: "./", onNotFound: () => {} }));
+app.use("/static/*", serveStatic({ root: "./", onNotFound: () => { } }));
 
 app.get(
   "*",
@@ -35,7 +35,6 @@ app.get(
     cacheName: CACHE_NAME,
     cacheControl: "max-age=60",
     wait: true,
-    duration: 120,
   }),
 );
 
