@@ -2,14 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-.comments a:not(.user){
-    @apply underline;
+.comments a:not(.user) {
+  @apply underline;
 }
 
-.comments pre{
-    @apply whitespace-pre-wrap;
+.comments pre {
+  @apply whitespace-pre-wrap;
 }
 
-a:visited{
-    color: gray;
+a:visited {
+  color: gray;
 }
