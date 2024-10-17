@@ -15,7 +15,7 @@ jobs:
       - name: Setup Deno
         uses: denoland/setup-deno@v2
 
-      - name: Type Check
+      - name: Check types
         run: deno check .
 
       - name: Format
