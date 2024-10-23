@@ -11,7 +11,7 @@ export function BaseLayout(children: Child) {
         <link rel="icon" href="/static/logo.svg" />
         <link rel="stylesheet" type="text/css" href="/static/main.gen.css" />
       </head>
-      <body class="mx-auto md:p-2 md:w-[85%] bg-[#f9f9f9]">
+      <body class="mx-auto md:p-2 md:w-[85%] bg-white">
         <Header />
         {children}
         <Footer />

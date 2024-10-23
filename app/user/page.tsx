@@ -11,7 +11,7 @@ export default function UserPage(props: UserProps) {
   const { user, url } = props;
 
   return (
-    <div class="bg-white pt-1 pb-3 px-3">
+    <div class="bg-stone-100 pt-1 pb-3 px-3">
       <PageHead title={user.id + " | " + SITE_TITLE} url={url} />
       <ul class="my-1 text-sm">
         <li>
