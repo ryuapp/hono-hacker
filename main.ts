@@ -15,9 +15,6 @@ import item from "./app/item/controller.ts";
 import user from "./app/user/controller.ts";
 import { CACHE_NAME } from "./config/site.ts";
 
-// Import cron.ts to run the cron job on Deno deploy
-// import "./cron.ts";
-
 const app = new Hono();
 app.use(
   logger(),
@@ -29,15 +26,17 @@ app.use(
 );
 app.use("/static/*", serveStatic({ root: "./", onNotFound: () => {} }));
 
-app.get(
-  "*",
-  cache({
-    cacheName: CACHE_NAME,
-    cacheControl: "max-age=60",
-    wait: true,
-    duration: 120,
-  }),
-);
+if (!Deno.env.get("IS_DEVELOPMENT")) {
+  app.get(
+    "*",
+    cache({
+      cacheName: CACHE_NAME,
+      cacheControl: "max-age=60",
+      wait: true,
+      duration: 120,
+    }),
+  );
+}
 
 app.route("/", home);
 app.route("/item", item);
