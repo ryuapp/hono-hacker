@@ -7,9 +7,7 @@ type UserProps = {
   url: string;
 };
 
-export default function UserPage(props: UserProps) {
-  const { user, url } = props;
-
+export default function UserPage({ user, url }: UserProps) {
   return (
     <div class="bg-stone-100 pt-1 pb-3 px-3">
       <PageHead title={user.id + " | " + SITE_TITLE} url={url} />

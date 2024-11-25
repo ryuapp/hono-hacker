@@ -6,8 +6,7 @@ type CommentsProps = {
   comments: Item[];
 };
 
-export function CommentSection(props: CommentsProps) {
-  const { comments } = props;
+export function CommentSection({ comments }: CommentsProps) {
   return (
     <div class="comments">
       <Comments comments={comments} />
@@ -15,8 +14,7 @@ export function CommentSection(props: CommentsProps) {
   );
 }
 
-function Comments(props: CommentsProps) {
-  const { comments } = props;
+function Comments({ comments }: CommentsProps) {
   return (
     <div>
       {comments.map((comment) => <Comment comment={comment} />)}
@@ -28,8 +26,7 @@ type CommentProps = {
   comment: Item;
 };
 
-function Comment(props: CommentProps) {
-  const { comment } = props;
+function Comment({ comment }: CommentProps) {
   const [open, setOpen] = useState(true);
 
   return (

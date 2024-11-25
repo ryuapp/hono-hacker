@@ -5,8 +5,7 @@ type ItemSummaryProps = {
   rank?: number;
 };
 
-export function ItemSummary(props: ItemSummaryProps) {
-  const { item, rank } = props;
+export function ItemSummary({ item, rank }: ItemSummaryProps) {
   return (
     <div class="flex my-1">
       <div class="flex mt-1">

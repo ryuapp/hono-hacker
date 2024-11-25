@@ -8,7 +8,7 @@ app.get(
   "/",
   async (c) => {
     const items = await getItems();
-    return c.render(Home(items));
+    return c.render(Home({ items }));
   },
 );
 

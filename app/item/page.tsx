@@ -9,8 +9,7 @@ type ItemProps = {
   url: string;
 };
 
-export default function ItemPage(props: ItemProps) {
-  const { item, url } = props;
+export default function ItemPage({ item, url }: ItemProps) {
   return (
     <>
       <PageHead title={item.title + " | " + SITE_TITLE} url={url} />

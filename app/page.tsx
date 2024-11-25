@@ -2,7 +2,11 @@ import { type Item } from "../features/hackerNews.ts";
 import { PageHead } from "../components/PageHead.tsx";
 import { ItemSummary } from "../components/ItemSummary.tsx";
 
-export default function Home(items: Array<Item>) {
+type HomeProps = {
+  items: Array<Item>;
+};
+
+export default function Home({ items }: HomeProps) {
   return (
     <>
       <PageHead />
