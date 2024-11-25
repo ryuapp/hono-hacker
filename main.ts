@@ -24,7 +24,7 @@ app.use(
   cors(),
   secureHeaders(),
   jsxRenderer(({ children }) => {
-    return BaseLayout(children);
+    return BaseLayout({ children });
   }),
 );
 app.use("/static/*", serveStatic({ root: "./", onNotFound: () => {} }));
