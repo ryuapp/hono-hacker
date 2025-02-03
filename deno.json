@@ -4,8 +4,8 @@
     "tailwindcss": "tailwindcss -i ./styles/main.css -o ./static/main.gen.css --minify --watch"
   },
   "imports": {
-    "hono": "jsr:@hono/hono@^4.6.5",
-    "tailwindcss": "npm:tailwindcss@^3.4.14"
+    "hono": "jsr:@hono/hono@^4.6.20",
+    "tailwindcss": "npm:tailwindcss@^3.4.17"
   },
   "compilerOptions": {
     "jsx": "react-jsx",
