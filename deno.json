@@ -1,15 +1,17 @@
 {
   "tasks": {
     "start": "deno run -A --unstable-hmr=main.ts --unstable-cron main.ts & deno task tailwindcss",
-    "tailwindcss": "tailwindcss -i ./styles/main.css -o ./static/main.gen.css --minify --watch"
+    "tailwindcss": "npx @tailwindcss/cli -i ./styles/main.css -o ./static/main.gen.css --minify --watch"
   },
   "imports": {
+    "@tailwindcss/cli": "npm:@tailwindcss/cli@^4.0.3",
     "hono": "jsr:@hono/hono@^4.6.20",
-    "tailwindcss": "npm:tailwindcss@^3.4.17"
+    "tailwindcss": "npm:tailwindcss@^4.0.0"
   },
   "compilerOptions": {
     "jsx": "react-jsx",
     "jsxImportSource": "hono/jsx"
   },
+  "nodeModulesDir":"auto",
   "exclude": ["README.md", "./static/*"]
 }
