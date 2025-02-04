@@ -12,6 +12,6 @@
     "jsx": "react-jsx",
     "jsxImportSource": "hono/jsx"
   },
-  "nodeModulesDir":"auto",
+  "nodeModulesDir": "auto",
   "exclude": ["README.md", "./static/*"]
 }
