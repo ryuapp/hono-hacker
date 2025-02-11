@@ -42,9 +42,13 @@ app.route("/", home);
 app.route("/item", item);
 app.route("/user", user);
 
-app.notFound((c) => c.render(NotFoundLayout()));
+app.notFound((c) => {
+  c.status(404);
+  return c.render(NotFoundLayout());
+});
 app.onError((err, c) => {
   console.error(err);
+  c.status(500);
   return c.render(ErrorLayout());
 });
 
