@@ -1,14 +1,14 @@
 {
   "version": "4",
   "specifiers": {
-    "jsr:@hono/hono@^4.6.20": "4.6.20",
-    "npm:@tailwindcss/cli@4.0.3": "4.0.3",
-    "npm:@tailwindcss/cli@^4.0.3": "4.0.3",
-    "npm:tailwindcss@4": "4.0.3"
+    "jsr:@hono/hono@^4.7.0": "4.7.0",
+    "npm:@tailwindcss/cli@4.0.6": "4.0.6",
+    "npm:@tailwindcss/cli@^4.0.6": "4.0.6",
+    "npm:tailwindcss@^4.0.6": "4.0.6"
   },
   "jsr": {
-    "@hono/hono@4.6.20": {
-      "integrity": "0db02d7b80db67a17e18b434c6105af002412cada5e908013086eb9fa9466a87"
+    "@hono/hono@4.7.0": {
+      "integrity": "1eb10e1976d3dda22ab43115ecfa348a43cd17c8aea5c0039c9757ebded624f8"
     }
   },
   "npm": {
@@ -73,8 +73,8 @@
         "node-addon-api"
       ]
     },
-    "@tailwindcss/cli@4.0.3": {
-      "integrity": "sha512-EPmuqS5e1yax6Qe1vRoWFbCCttMS/Thc+yFGSE/nzYe/BdYDlUc+OoE7D5DawAz4sI5H8v8Zx/mYyEdy+saB0w==",
+    "@tailwindcss/cli@4.0.6": {
+      "integrity": "sha512-5EybaKjLL6ruuKq4PFMpf60npR6x6MmVlqvXWca7ZcujQd7rj5vckNHi2M7Bn0U7dkWmmOm3s/9USLL7BZuudw==",
       "dependencies": [
         "@parcel/watcher",
         "@tailwindcss/node",
@@ -86,49 +86,49 @@
         "tailwindcss"
       ]
     },
-    "@tailwindcss/node@4.0.3": {
-      "integrity": "sha512-QsVJokOl0pJ4AbJV33D2npvLcHGPWi5MOSZtrtE0GT3tSx+3D0JE2lokLA8yHS1x3oCY/3IyRyy7XX6tmzid7A==",
+    "@tailwindcss/node@4.0.6": {
+      "integrity": "sha512-jb6E0WeSq7OQbVYcIJ6LxnZTeC4HjMvbzFBMCrQff4R50HBlo/obmYNk6V2GCUXDeqiXtvtrQgcIbT+/boB03Q==",
       "dependencies": [
         "enhanced-resolve",
         "jiti",
         "tailwindcss"
       ]
     },
-    "@tailwindcss/oxide-android-arm64@4.0.3": {
-      "integrity": "sha512-S8XOTQuMnpijZRlPm5HBzPJjZ28quB+40LSRHjRnQF6rRYKsvpr1qkY7dfwsetNdd+kMLOMDsvmuT8WnqqETvg=="
+    "@tailwindcss/oxide-android-arm64@4.0.6": {
+      "integrity": "sha512-xDbym6bDPW3D2XqQqX3PjqW3CKGe1KXH7Fdkc60sX5ZLVUbzPkFeunQaoP+BuYlLc2cC1FoClrIRYnRzof9Sow=="
     },
-    "@tailwindcss/oxide-darwin-arm64@4.0.3": {
-      "integrity": "sha512-smrY2DpzhXvgDhZtQlYAl8+vxJ04lv2/64C1eiRxvsRT2nkw/q+zA1/eAYKvUHat6cIuwqDku3QucmrUT6pCeg=="
+    "@tailwindcss/oxide-darwin-arm64@4.0.6": {
+      "integrity": "sha512-1f71/ju/tvyGl5c2bDkchZHy8p8EK/tDHCxlpYJ1hGNvsYihZNurxVpZ0DefpN7cNc9RTT8DjrRoV8xXZKKRjg=="
     },
-    "@tailwindcss/oxide-darwin-x64@4.0.3": {
-      "integrity": "sha512-NTz8x/LcGUjpZAWUxz0ZuzHao90Wj9spoQgomwB+/hgceh5gcJDfvaBYqxLFpKzVglpnbDSq1Fg0p0zI4oa5Pg=="
+    "@tailwindcss/oxide-darwin-x64@4.0.6": {
+      "integrity": "sha512-s/hg/ZPgxFIrGMb0kqyeaqZt505P891buUkSezmrDY6lxv2ixIELAlOcUVTkVh245SeaeEiUVUPiUN37cwoL2g=="
     },
-    "@tailwindcss/oxide-freebsd-x64@4.0.3": {
-      "integrity": "sha512-yQc9Q0JCOp3kkAV8gKgDctXO60IkQhHpqGB+KgOccDtD5UmN6Q5+gd+lcsDyQ7N8dRuK1fAud51xQpZJgKfm7g=="
+    "@tailwindcss/oxide-freebsd-x64@4.0.6": {
+      "integrity": "sha512-Z3Wo8FWZnmio8+xlcbb7JUo/hqRMSmhQw8IGIRoRJ7GmLR0C+25Wq+bEX/135xe/yEle2lFkhu9JBHd4wZYiig=="
     },
-    "@tailwindcss/oxide-linux-arm-gnueabihf@4.0.3": {
-      "integrity": "sha512-e1ivVMLSnxTOU1O3npnxN16FEyWM/g3SuH2pP6udxXwa0/SnSAijRwcAYRpqIlhVKujr158S8UeHxQjC4fGl4w=="
+    "@tailwindcss/oxide-linux-arm-gnueabihf@4.0.6": {
+      "integrity": "sha512-SNSwkkim1myAgmnbHs4EjXsPL7rQbVGtjcok5EaIzkHkCAVK9QBQsWeP2Jm2/JJhq4wdx8tZB9Y7psMzHYWCkA=="
     },
-    "@tailwindcss/oxide-linux-arm64-gnu@4.0.3": {
-      "integrity": "sha512-PLrToqQqX6sdJ9DmMi8IxZWWrfjc9pdi9AEEPTrtMts3Jm9HBi1WqEeF1VwZZ2aW9TXloE5OwA35zuuq1Bhb/Q=="
+    "@tailwindcss/oxide-linux-arm64-gnu@4.0.6": {
+      "integrity": "sha512-tJ+mevtSDMQhKlwCCuhsFEFg058kBiSy4TkoeBG921EfrHKmexOaCyFKYhVXy4JtkaeeOcjJnCLasEeqml4i+Q=="
     },
-    "@tailwindcss/oxide-linux-arm64-musl@4.0.3": {
-      "integrity": "sha512-YlzRxx7N1ampfgSKzEDw0iwDkJXUInR4cgNEqmR4TzHkU2Vhg59CGPJrTI7dxOBofD8+O35R13Nk9Ytyv0JUFg=="
+    "@tailwindcss/oxide-linux-arm64-musl@4.0.6": {
+      "integrity": "sha512-IoArz1vfuTR4rALXMUXI/GWWfx2EaO4gFNtBNkDNOYhlTD4NVEwE45nbBoojYiTulajI4c2XH8UmVEVJTOJKxA=="
     },
-    "@tailwindcss/oxide-linux-x64-gnu@4.0.3": {
-      "integrity": "sha512-Xfc3z/li6XkuD7Hs+Uk6pjyCXnfnd9zuQTKOyDTZJ544xc2yoMKUkuDw6Et9wb31MzU2/c0CIUpTDa71lL9KHw=="
+    "@tailwindcss/oxide-linux-x64-gnu@4.0.6": {
+      "integrity": "sha512-QtsUfLkEAeWAC3Owx9Kg+7JdzE+k9drPhwTAXbXugYB9RZUnEWWx5x3q/au6TvUYcL+n0RBqDEO2gucZRvRFgQ=="
     },
-    "@tailwindcss/oxide-linux-x64-musl@4.0.3": {
-      "integrity": "sha512-ugKVqKzwa/cjmqSQG17aS9DYrEcQ/a5NITcgmOr3JLW4Iz64C37eoDlkC8tIepD3S/Td/ywKAolTQ8fKbjEL4g=="
+    "@tailwindcss/oxide-linux-x64-musl@4.0.6": {
+      "integrity": "sha512-QthvJqIji2KlGNwLcK/PPYo7w1Wsi/8NK0wAtRGbv4eOPdZHkQ9KUk+oCoP20oPO7i2a6X1aBAFQEL7i08nNMA=="
     },
-    "@tailwindcss/oxide-win32-arm64-msvc@4.0.3": {
-      "integrity": "sha512-qHPDMl+UUwsk1RMJMgAXvhraWqUUT+LR/tkXix5RA39UGxtTrHwsLIN1AhNxI5i2RFXAXfmFXDqZCdyQ4dWmAQ=="
+    "@tailwindcss/oxide-win32-arm64-msvc@4.0.6": {
+      "integrity": "sha512-+oka+dYX8jy9iP00DJ9Y100XsqvbqR5s0yfMZJuPR1H/lDVtDfsZiSix1UFBQ3X1HWxoEEl6iXNJHWd56TocVw=="
     },
-    "@tailwindcss/oxide-win32-x64-msvc@4.0.3": {
-      "integrity": "sha512-+ujwN4phBGyOsPyLgGgeCyUm4Mul+gqWVCIGuSXWgrx9xVUnf6LVXrw0BDBc9Aq1S2qMyOTX4OkCGbZeoIo8Qw=="
+    "@tailwindcss/oxide-win32-x64-msvc@4.0.6": {
+      "integrity": "sha512-+o+juAkik4p8Ue/0LiflQXPmVatl6Av3LEZXpBTfg4qkMIbZdhCGWFzHdt2NjoMiLOJCFDddoV6GYaimvK1Olw=="
     },
-    "@tailwindcss/oxide@4.0.3": {
-      "integrity": "sha512-FFcp3VNvRjjmFA39ORM27g2mbflMQljhvM7gxBAujHxUy4LXlKa6yMF9wbHdTbPqTONiCyyOYxccvJyVyI/XBg==",
+    "@tailwindcss/oxide@4.0.6": {
+      "integrity": "sha512-lVyKV2y58UE9CeKVcYykULe9QaE1dtKdxDEdrTPIdbzRgBk6bdxHNAoDqvcqXbIGXubn3VOl1O/CFF77v/EqSA==",
       "dependencies": [
         "@tailwindcss/oxide-android-arm64",
         "@tailwindcss/oxide-darwin-arm64",
@@ -248,8 +248,8 @@
     "picomatch@2.3.1": {
       "integrity": "sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA=="
     },
-    "tailwindcss@4.0.3": {
-      "integrity": "sha512-ImmZF0Lon5RrQpsEAKGxRvHwCvMgSC4XVlFRqmbzTEDb/3wvin9zfEZrMwgsa3yqBbPqahYcVI6lulM2S7IZAA=="
+    "tailwindcss@4.0.6": {
+      "integrity": "sha512-mysewHYJKaXgNOW6pp5xon/emCsfAMnO8WMaGKZZ35fomnR/T5gYnRg2/yRTTrtXiEl1tiVkeRt0eMO6HxEZqw=="
     },
     "tapable@2.2.1": {
       "integrity": "sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ=="
@@ -263,9 +263,9 @@
   },
   "workspace": {
     "dependencies": [
-      "jsr:@hono/hono@^4.6.20",
-      "npm:@tailwindcss/cli@^4.0.3",
-      "npm:tailwindcss@4"
+      "jsr:@hono/hono@^4.7.0",
+      "npm:@tailwindcss/cli@^4.0.6",
+      "npm:tailwindcss@^4.0.6"
     ]
   }
 }
