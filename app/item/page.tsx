@@ -8,8 +8,8 @@ type ItemProps = {
 
 export default function ItemPage({ item }: ItemProps) {
   return (
-    <div class="bg-stone-100 pt-1 pb-3 px-3">
-      <div class="divide-y space-y-3">
+    <div class="bg-stone-100 px-3 pt-1 pb-3">
+      <div class="space-y-3 divide-y">
         <ItemSummary item={item} />
         {item.comments ? <CommentSection comments={item.comments} /> : null}
       </div>

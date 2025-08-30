@@ -48,9 +48,9 @@ function Comment(
 
   return (
     <>
-      <div class="text-xs text-gray-500 pt-2 pb-1">
-        <span class="cursor-pointer mr-1 text-sm text-gray-400">▲</span>
-        <a class="user hover:underline mr-1" href={`/user?id=${comment.user}`}>
+      <div class="pt-2 text-gray-500 text-xs">
+        <span class="mr-1 cursor-pointer text-gray-400 text-sm">▲</span>
+        <a class="user mr-1 hover:underline" href={`/user?id=${comment.user}`}>
           {comment.user}
         </a>
         <span class="mr-1">{timeAgo(comment.time)} ago</span>
@@ -65,7 +65,7 @@ function Comment(
         </button>
       </div>
       <toggle show={this.show}>
-        <div class="text-[0.825rem] break-words">
+        <div class="break-words text-[0.825rem]">
           {html`
             ${comment.content ?? ""}
           `}

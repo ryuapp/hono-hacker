@@ -7,28 +7,28 @@ type ItemSummaryProps = {
 
 export function ItemSummary({ item, rank }: ItemSummaryProps) {
   return (
-    <div class="flex my-1">
-      <div class="flex mt-1">
+    <div class="my-1 flex">
+      <div class="mt-1 flex">
         {rank
           ? (
-            <span class="text-sm text-gray-500 mr-1">
+            <span class="mr-1 text-gray-500 text-sm">
               {rank < 10 ? <>&nbsp;&nbsp;</> : ""}
               {rank}.
             </span>
           )
           : null}
-        <span class="cursor-pointer text-sm text-gray-400 mr-1">▲</span>
+        <span class="mr-1 cursor-pointer text-gray-400 text-sm">▲</span>
       </div>
       <div>
         <div>
           <span class="mr-1 text-sm">
             <a href={getUrl(item)}>{item.title}</a>
           </span>
-          <span class="text-xs text-gray-500">
+          <span class="text-gray-500 text-xs">
             {item.url ? `(${host(item.url)})` : ""}
           </span>
         </div>
-        <div class="text-xs text-gray-500 flex gap-1">
+        <div class="flex gap-1 text-gray-500 text-xs">
           <span>{item.points} point{item.points > 1 ? "s" : ""} by</span>
           <a class="hover:underline" href={`/user?id=${item.user}`}>
             {item.user}

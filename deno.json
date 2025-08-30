@@ -13,6 +13,9 @@
     "jsx": "react-jsx",
     "jsxImportSource": "mono-jsx"
   },
+  "lint": {
+    "plugins": ["jsr:@ryu/deno-lint-plugin-tailwindcss@0.2.0"]
+  },
   "nodeModulesDir": "auto",
   "exclude": ["README.md", "./static/*"]
 }

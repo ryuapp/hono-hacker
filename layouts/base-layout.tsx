@@ -27,7 +27,7 @@ export function BaseLayout({
         <link rel="stylesheet" type="text/css" href="/static/main.gen.css" />
         <PageHead title={title} description={description} url={url} />
       </head>
-      <body class="mx-auto md:p-2 md:w-[85%] bg-white">
+      <body class="mx-auto bg-white md:w-[85%] md:p-2">
         <Header />
         {children}
         <Footer />

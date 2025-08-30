@@ -2,6 +2,7 @@
   "version": "5",
   "specifiers": {
     "jsr:@hono/hono@^4.9.5": "4.9.5",
+    "jsr:@ryu/deno-lint-plugin-tailwindcss@0.2.0": "0.2.0",
     "npm:@tailwindcss/cli@4.1.12": "4.1.12",
     "npm:@tailwindcss/cli@^4.1.12": "4.1.12",
     "npm:@types/node@*": "24.2.0",
@@ -11,6 +12,9 @@
   "jsr": {
     "@hono/hono@4.9.5": {
       "integrity": "9979382257287abb33e98893247a97660adc0a9239cf37d57e207e3592040a96"
+    },
+    "@ryu/deno-lint-plugin-tailwindcss@0.2.0": {
+      "integrity": "1522555fefd6c6f7e6722b15201a7d76ee0e4fc273d4fc28892d587be132ba13"
     }
   },
   "npm": {
