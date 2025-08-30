@@ -29,9 +29,22 @@ type CommentProps = {
   comment: Item;
 };
 
-function Comment(this: FC<{ show: boolean }>, props: CommentProps) {
+function Comment(
+  this: FC<{ show: boolean; totalCount: number }>,
+  props: CommentProps,
+) {
   const { comment } = props;
   this.show = true;
+
+  // Count total comments including self and nested
+  const countTotalComments = (comments: Item[] | undefined): number => {
+    if (!comments || comments.length === 0) return 0;
+    return comments.reduce((total, c) => {
+      return total + 1 + countTotalComments(c.comments);
+    }, 0);
+  };
+
+  this.totalCount = 1 + countTotalComments(comment.comments);
 
   return (
     <>
@@ -43,12 +56,12 @@ function Comment(this: FC<{ show: boolean }>, props: CommentProps) {
         <span class="mr-1">{timeAgo(comment.time)} ago</span>
         <button
           type="button"
-          class="hover:cursor-pointer"
+          class="hover:cursor-pointer hover:underline"
           onClick={() => {
             this.show = !this.show;
           }}
         >
-          {this.computed(() => this.show ? "[-]" : "[+]")}
+          {this.computed(() => this.show ? "[-]" : `[${this.totalCount} more]`)}
         </button>
       </div>
       <toggle show={this.show}>
