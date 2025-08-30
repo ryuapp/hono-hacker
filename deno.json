@@ -6,11 +6,12 @@
   "imports": {
     "@tailwindcss/cli": "npm:@tailwindcss/cli@^4.1.12",
     "hono": "jsr:@hono/hono@^4.9.5",
+    "mono-jsx": "npm:mono-jsx@^0.6.11",
     "tailwindcss": "npm:tailwindcss@^4.1.12"
   },
   "compilerOptions": {
     "jsx": "react-jsx",
-    "jsxImportSource": "hono/jsx"
+    "jsxImportSource": "mono-jsx"
   },
   "nodeModulesDir": "auto",
   "exclude": ["README.md", "./static/*"]

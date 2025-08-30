@@ -1,16 +1,11 @@
 import { Header } from "../components/Header.tsx";
 import { Footer } from "../components/Footer.tsx";
-import { type Child } from "hono/jsx";
 
-type BaseLayoutProps = {
-  children: Child;
-};
-
-export function BaseLayout({ children }: BaseLayoutProps) {
+export function BaseLayout(children: JSX.Element) {
   return (
     <html>
       <head>
-        <meta charset="utf-8" />
+        <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/static/logo.svg" />
         <link rel="stylesheet" type="text/css" href="/static/main.gen.css" />

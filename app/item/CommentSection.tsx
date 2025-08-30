@@ -1,4 +1,3 @@
-import { useState } from "hono/jsx";
 import { type Item } from "../../features/hackerNews.ts";
 import { timeAgo } from "../../features/hackerNews.ts";
 
@@ -26,8 +25,9 @@ type CommentProps = {
   comment: Item;
 };
 
-function Comment({ comment }: CommentProps) {
-  const [open, setOpen] = useState(true);
+function Comment(this: FC<{ show: boolean }>, props: CommentProps) {
+  const { comment } = props;
+  this.show = true;
 
   return (
     <>
@@ -35,21 +35,29 @@ function Comment({ comment }: CommentProps) {
         <span class="cursor-pointer mr-1 text-sm text-gray-400">▲</span>
         <a class="user hover:underline" href={`/user?id=${comment.user}`}>
           {comment.user}
-        </a>{" "}
-        {timeAgo(comment.time)} ago{" "}
-        <button onClick={() => setOpen(!open)}>{open ? "[-]" : `[+]`}</button>
+        </a>
+        {timeAgo(comment.time)} ago
+        <button
+          class="hover:cursor-pointer"
+          onClick={() => {
+            this.show = !this.show;
+          }}
+        >
+          {this.computed(() => this.show ? "[-]" : "[+]")}
+        </button>
       </div>
-      <div
-        class="text-[0.825rem] break-words"
-        dangerouslySetInnerHTML={{
-          __html: comment.content ?? "",
-        }}
-      />
-      <div class="pl-5">
-        {comment.comments && comment.comments.length > 0
-          ? <Comments comments={comment.comments} />
-          : null}
-      </div>
+      <toggle show={this.show}>
+        <div class="text-[0.825rem] break-words">
+          {html`
+            ${comment.content ?? ""}
+          `}
+        </div>
+        <div class="pl-5">
+          {comment.comments && comment.comments.length > 0
+            ? <Comments comments={comment.comments} />
+            : null}
+        </div>
+      </toggle>
     </>
   );
 }

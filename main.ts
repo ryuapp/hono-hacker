@@ -4,7 +4,6 @@ import { showRoutes } from "hono/dev";
 import { logger } from "hono/logger";
 import { cors } from "hono/cors";
 import { secureHeaders } from "hono/secure-headers";
-import { jsxRenderer } from "hono/jsx-renderer";
 import { serveStatic } from "hono/deno";
 import { BaseLayout } from "./layouts/BaseLayout.tsx";
 import { NotFoundLayout } from "./layouts/NotFoundLayout.tsx";
@@ -20,10 +19,15 @@ app.use(
   logger(),
   cors(),
   secureHeaders(),
-  jsxRenderer(({ children }) => {
-    return BaseLayout({ children });
-  }),
 );
+
+app.use(async (c, next) => {
+  c.setRenderer((content) => {
+    return BaseLayout(content);
+  });
+  await next();
+});
+
 app.use("/static/*", serveStatic({ root: "./", onNotFound: () => {} }));
 
 if (!Deno.env.get("IS_DEVELOPMENT")) {

@@ -4,6 +4,7 @@
     "jsr:@hono/hono@^4.9.5": "4.9.5",
     "npm:@tailwindcss/cli@4.1.12": "4.1.12",
     "npm:@tailwindcss/cli@^4.1.12": "4.1.12",
+    "npm:mono-jsx@~0.6.11": "0.6.11",
     "npm:tailwindcss@^4.1.12": "4.1.12"
   },
   "jsr": {
@@ -430,6 +431,10 @@
       "integrity": "sha512-+NsyUUAZDmo6YVHzL/stxSu3t9YS1iljliy3BSDrXJ/dkn1KYdmtZODGGjLcc9XLgVVpH4KshHB8XmZgMhaBXg==",
       "bin": true
     },
+    "mono-jsx@0.6.11": {
+      "integrity": "sha512-CupNC1EmSSb7ryt8aGNrSW1SfKJhDkahbYFhJdiv983plOZczoBbnJwcfgb7KzJbycc77+maF83KuhirTpm+dg==",
+      "bin": true
+    },
     "mri@1.2.0": {
       "integrity": "sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA=="
     },
@@ -479,6 +484,7 @@
     "dependencies": [
       "jsr:@hono/hono@^4.9.5",
       "npm:@tailwindcss/cli@^4.1.12",
+      "npm:mono-jsx@~0.6.11",
       "npm:tailwindcss@^4.1.12"
     ]
   }
