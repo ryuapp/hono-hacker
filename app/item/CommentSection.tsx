@@ -16,7 +16,11 @@ export function CommentSection({ comments }: CommentsProps) {
 function Comments({ comments }: CommentsProps) {
   return (
     <div>
-      {comments.map((comment) => <Comment comment={comment} />)}
+      {comments.map((comment) => (
+        <Comment
+          comment={comment}
+        />
+      ))}
     </div>
   );
 }
@@ -38,6 +42,7 @@ function Comment(this: FC<{ show: boolean }>, props: CommentProps) {
         </a>
         {timeAgo(comment.time)} ago
         <button
+          type="button"
           class="hover:cursor-pointer"
           onClick={() => {
             this.show = !this.show;

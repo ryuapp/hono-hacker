@@ -11,7 +11,12 @@ export default function Home({ items }: HomeProps) {
     <>
       <PageHead />
       <div class="bg-stone-100 pt-1 pb-3">
-        {items.map((item, i) => <ItemSummary item={item} rank={i + 1} />)}
+        {items.map((item, i) => (
+          <ItemSummary
+            item={item}
+            rank={i + 1}
+          />
+        ))}
       </div>
     </>
   );
