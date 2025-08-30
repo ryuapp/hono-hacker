@@ -5,9 +5,9 @@ import { logger } from "hono/logger";
 import { cors } from "hono/cors";
 import { secureHeaders } from "hono/secure-headers";
 import { serveStatic } from "hono/deno";
-import { BaseLayout } from "./layouts/BaseLayout.tsx";
-import { NotFoundLayout } from "./layouts/NotFoundLayout.tsx";
-import { ErrorLayout } from "./layouts/ErrorLayout.tsx";
+import { BaseLayout } from "./layouts/base-layout.tsx";
+import { NotFoundLayout } from "./layouts/not-found-layout.tsx";
+import { ErrorLayout } from "./layouts/error-layout.tsx";
 
 import home from "./app/controller.ts";
 import item from "./app/item/controller.ts";

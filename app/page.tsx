@@ -1,6 +1,6 @@
-import { type Item } from "../features/hackerNews.ts";
-import { PageHead } from "../components/PageHead.tsx";
-import { ItemSummary } from "../components/ItemSummary.tsx";
+import { type Item } from "../features/hacker-news.ts";
+import { PageHead } from "../components/page-head.tsx";
+import { ItemSummary } from "../components/item-summary.tsx";
 
 type HomeProps = {
   items: Array<Item>;

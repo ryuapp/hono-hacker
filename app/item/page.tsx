@@ -1,7 +1,7 @@
-import { PageHead } from "../../components/PageHead.tsx";
-import { CommentSection } from "./CommentSection.tsx";
-import { ItemSummary } from "../../components/ItemSummary.tsx";
-import { Item } from "../../features/hackerNews.ts";
+import { PageHead } from "../../components/page-head.tsx";
+import { CommentSection } from "./comment-section.tsx";
+import { ItemSummary } from "../../components/item-summary.tsx";
+import { Item } from "../../features/hacker-news.ts";
 import { SITE_TITLE } from "../../config/site.ts";
 
 type ItemProps = {

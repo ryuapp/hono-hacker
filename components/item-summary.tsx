@@ -1,4 +1,4 @@
-import { getUrl, host, type Item, timeAgo } from "../features/hackerNews.ts";
+import { getUrl, host, type Item, timeAgo } from "../features/hacker-news.ts";
 
 type ItemSummaryProps = {
   item: Item;

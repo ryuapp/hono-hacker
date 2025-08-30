@@ -1,5 +1,5 @@
 import { Hono } from "hono";
-import { getItem } from "../../features/hackerNews.ts";
+import { getItem } from "../../features/hacker-news.ts";
 
 import ItemPage from "./page.tsx";
 

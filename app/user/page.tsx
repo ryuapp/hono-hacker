@@ -1,5 +1,5 @@
-import { User } from "../../features/hackerNews.ts";
-import { PageHead } from "../../components/PageHead.tsx";
+import { User } from "../../features/hacker-news.ts";
+import { PageHead } from "../../components/page-head.tsx";
 import { SITE_TITLE } from "../../config/site.ts";
 
 type UserProps = {

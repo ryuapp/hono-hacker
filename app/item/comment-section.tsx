@@ -1,5 +1,5 @@
-import { type Item } from "../../features/hackerNews.ts";
-import { timeAgo } from "../../features/hackerNews.ts";
+import { type Item } from "../../features/hacker-news.ts";
+import { timeAgo } from "../../features/hacker-news.ts";
 
 type CommentsProps = {
   comments: Item[];
