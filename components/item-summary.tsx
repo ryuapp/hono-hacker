@@ -28,12 +28,12 @@ export function ItemSummary({ item, rank }: ItemSummaryProps) {
             {item.url ? `(${host(item.url)})` : ""}
           </span>
         </div>
-        <div class="text-xs text-gray-500">
-          {item.points} point{item.points > 1 ? "s" : ""} by{" "}
+        <div class="text-xs text-gray-500 flex gap-1">
+          <span>{item.points} point{item.points > 1 ? "s" : ""} by</span>
           <a class="hover:underline" href={`/user?id=${item.user}`}>
             {item.user}
-          </a>{" "}
-          {timeAgo(item.time)} ago |{" "}
+          </a>
+          <span>{timeAgo(item.time)} ago |</span>
           <a class="hover:underline" href={`/item?id=${item.id}`}>
             {`${item.comments_count} comment` +
               (item.comments_count && item.comments_count > 1 ? "s" : "")}

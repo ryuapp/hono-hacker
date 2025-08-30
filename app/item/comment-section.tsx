@@ -37,10 +37,10 @@ function Comment(this: FC<{ show: boolean }>, props: CommentProps) {
     <>
       <div class="text-xs text-gray-500 pt-2 pb-1">
         <span class="cursor-pointer mr-1 text-sm text-gray-400">▲</span>
-        <a class="user hover:underline" href={`/user?id=${comment.user}`}>
+        <a class="user hover:underline mr-1" href={`/user?id=${comment.user}`}>
           {comment.user}
         </a>
-        {timeAgo(comment.time)} ago
+        <span class="mr-1">{timeAgo(comment.time)} ago</span>
         <button
           type="button"
           class="hover:cursor-pointer"

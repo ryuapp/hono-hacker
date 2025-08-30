@@ -18,21 +18,21 @@ export default function UserPage({ user }: UserProps) {
           <span class="inline-block min-w-3.5">Karma:</span> {user.karma}
         </li>
       </ul>
-      <p class="pt-2 text-sm">
+      <p class="pt-2 text-sm flex gap-1">
         <a
           class="underline"
           href={`https://news.ycombinator.com/submitted?id=${user.id}`}
         >
           submissions
-        </a>{" "}
-        |{" "}
+        </a>
+        |
         <a
           class="underline"
           href={`https://news.ycombinator.com/threads?id=${user.id}`}
         >
           comments
-        </a>{" "}
-        |{" "}
+        </a>
+        |
         <a
           class="underline"
           href={`https://news.ycombinator.com/favorites?id=${user.id}`}
