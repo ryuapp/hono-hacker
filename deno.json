@@ -6,7 +6,7 @@
   "imports": {
     "@tailwindcss/cli": "npm:@tailwindcss/cli@^4.1.12",
     "hono": "jsr:@hono/hono@^4.9.5",
-    "mono-jsx": "npm:mono-jsx@^0.6.11",
+    "mono-jsx": "npm:mono-jsx@^0.6.12",
     "tailwindcss": "npm:tailwindcss@^4.1.12"
   },
   "compilerOptions": {
