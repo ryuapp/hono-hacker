@@ -1,7 +1,20 @@
 import { Header } from "../components/header.tsx";
 import { Footer } from "../components/footer.tsx";
+import { PageHead } from "../components/page-head.tsx";
 
-export function BaseLayout(children: JSX.Element) {
+type BaseLayoutProps = {
+  children: JSX.Element;
+  title?: string;
+  description?: string;
+  url?: string;
+};
+
+export function BaseLayout({
+  children,
+  title,
+  description,
+  url,
+}: BaseLayoutProps) {
   return (
     <html>
       <head>
@@ -12,6 +25,7 @@ export function BaseLayout(children: JSX.Element) {
         />
         <link rel="icon" href="/static/logo.svg" />
         <link rel="stylesheet" type="text/css" href="/static/main.gen.css" />
+        <PageHead title={title} description={description} url={url} />
       </head>
       <body class="mx-auto md:p-2 md:w-[85%] bg-white">
         <Header />

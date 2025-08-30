@@ -1,5 +1,6 @@
 import { Hono } from "hono";
 import { getItem } from "../../features/hacker-news.ts";
+import { SITE_TITLE } from "../../config/site.ts";
 
 import ItemPage from "./page.tsx";
 
@@ -14,7 +15,10 @@ app.get(
     const item = await getItem(Number(id));
     const url = c.req.url;
 
-    return c.render(ItemPage({ item, url }));
+    return c.render(ItemPage({ item }), {
+      title: item.title + " | " + SITE_TITLE,
+      url: url,
+    });
   },
 );
 

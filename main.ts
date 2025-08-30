@@ -22,8 +22,13 @@ app.use(
 );
 
 app.use(async (c, next) => {
-  c.setRenderer((content) => {
-    return BaseLayout(content);
+  c.setRenderer((content, props) => {
+    return BaseLayout({
+      children: content,
+      title: props?.title,
+      description: props?.description,
+      url: props?.url,
+    });
   });
   await next();
 });

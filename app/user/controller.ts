@@ -1,5 +1,6 @@
 import { Hono } from "hono";
 import { getUser } from "../../features/hacker-news.ts";
+import { SITE_TITLE } from "../../config/site.ts";
 
 import UserPage from "./page.tsx";
 
@@ -14,7 +15,10 @@ app.get(
     const user = await getUser(id);
     const url = c.req.url;
 
-    return c.render(UserPage({ user, url }));
+    return c.render(UserPage({ user }), {
+      title: user.id + " | " + SITE_TITLE,
+      url: url,
+    });
   },
 );
 
