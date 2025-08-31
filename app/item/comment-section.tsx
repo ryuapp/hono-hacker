@@ -66,9 +66,7 @@ function Comment(
       </div>
       <toggle show={this.show}>
         <div class="break-words text-[0.825rem]">
-          {html`
-            ${comment.content ?? ""}
-          `}
+          {html(comment.content ?? "")}
         </div>
         <div class="pl-5">
           {comment.comments && comment.comments.length > 0
