@@ -9,9 +9,9 @@ import { BaseLayout } from "./layouts/base-layout.tsx";
 import { NotFoundLayout } from "./layouts/not-found-layout.tsx";
 import { ErrorLayout } from "./layouts/error-layout.tsx";
 
-import home from "./app/controller.ts";
-import item from "./app/item/controller.ts";
-import user from "./app/user/controller.ts";
+import homeController from "./app/controller.tsx";
+import itemController from "./app/item/controller.tsx";
+import userController from "./app/user/controller.tsx";
 import { CACHE_NAME } from "./config/site.ts";
 
 const app = new Hono();
@@ -47,9 +47,9 @@ if (!Deno.env.get("IS_DEVELOPMENT")) {
   );
 }
 
-app.route("/", home);
-app.route("/item", item);
-app.route("/user", user);
+app.route("/", homeController);
+app.route("/item", itemController);
+app.route("/user", userController);
 
 app.notFound((c) => {
   c.status(404);

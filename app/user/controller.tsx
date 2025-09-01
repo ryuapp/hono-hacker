@@ -1,10 +1,28 @@
-import { User } from "../../features/hacker-news.ts";
+import { Hono } from "hono";
+import { getUser, type User } from "../../features/hacker-news.ts";
+import { SITE_TITLE } from "../../config/site.ts";
 
-type UserProps = {
+const app = new Hono();
+
+app.get(
+  "/",
+  async (c) => {
+    const id = c.req.query("id");
+    if (!id) return c.notFound();
+
+    const user = await getUser(id);
+    const url = c.req.url;
+
+    return c.render(<UserPage user={user} />, {
+      title: user.id + " | " + SITE_TITLE,
+      url: url,
+    });
+  },
+);
+
+function UserPage({ user }: {
   user: User;
-};
-
-export default function UserPage({ user }: UserProps) {
+}) {
   return (
     <div class="bg-stone-100 px-3 pt-1 pb-3">
       <ul class="my-1 text-sm">
@@ -43,3 +61,5 @@ export default function UserPage({ user }: UserProps) {
     </div>
   );
 }
+
+export default app;
