@@ -12,7 +12,7 @@ import { ErrorLayout } from "./layouts/error-layout.tsx";
 import homeController from "./app/controller.tsx";
 import itemController from "./app/item/controller.tsx";
 import userController from "./app/user/controller.tsx";
-import { CACHE_NAME } from "./config/site.ts";
+import { CACHE_NAME, SITE_URL } from "./config/site.ts";
 
 const app = new Hono();
 app.use(
@@ -20,6 +20,21 @@ app.use(
   cors(),
   secureHeaders(),
 );
+
+app.use(async (c, next) => {
+  const host = c.req.header("host")?.split(":")[0].toLowerCase();
+  if (host?.endsWith("deno.dev")) {
+    const currentUrl = new URL(c.req.url);
+    const redirectUrl = new URL(SITE_URL);
+
+    redirectUrl.pathname = currentUrl.pathname;
+    redirectUrl.search = currentUrl.search;
+
+    return c.redirect(redirectUrl.toString(), 308);
+  }
+
+  await next();
+});
 
 app.use(async (c, next) => {
   c.setRenderer((content, props) => {
