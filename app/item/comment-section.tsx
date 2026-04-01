@@ -64,7 +64,7 @@ function Comment(
           {this.computed(() => this.show ? "[-]" : `[${this.totalCount} more]`)}
         </button>
       </div>
-      <toggle show={this.show}>
+      <show when={this.show}>
         <div class="break-words text-[0.825rem]">
           {html(comment.content ?? "")}
         </div>
@@ -73,7 +73,7 @@ function Comment(
             ? <Comments comments={comment.comments} />
             : null}
         </div>
-      </toggle>
+      </show>
     </>
   );
 }
