@@ -2,7 +2,7 @@ import { GitHubIcon } from "./github-icon.tsx";
 
 export function Footer() {
   return (
-    <footer class="border-orange-200 border-t-2 bg-stone-100 flex flex-col items-center gap-2">
+    <footer class="flex flex-col items-center gap-2 border-orange-200 border-t-2 bg-stone-100">
       <div class="flex gap-4 pt-4">
         <a
           class="flex items-center"
